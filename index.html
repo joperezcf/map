@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="leaflet_x.css">
+    <script src="leaflet_x.js"></script>
+</head>
+<body>
+<div>
+    <div id="map" class="map map-home leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" style="height: 500px"></div>
+</div>
+</body>
+<footer>
+    <script>
+        var osmUrl = 'http://das-osm.cimex.com.cu/osm_tiles/{z}/{x}/{y}.png',
+            osmAttrib = '&copy; <a href="http://das-osm.cimex.com.cu">OpenStreetMap</a> contributors',
+            osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+        var map = L.map('map').setView([ 22.122641 , -80.451589], 17).addLayer(osm);
+
+        L.marker([22.122641 , -80.451589])
+            .addTo(map)
+            .bindPopup('Audita S.A.')
+            .openPopup();
+    </script>
+</footer>
+</html>
